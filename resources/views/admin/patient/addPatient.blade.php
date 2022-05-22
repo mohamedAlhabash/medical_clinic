@@ -10,10 +10,7 @@
             <input type="tel" id="phone" name="phone" placeholder="Phone" value="{{old('phone')}}"><br><br>
             <input type="text" id="identity_number" name="identity_number" placeholder="Identity number" value="{{old('identity_number')}}"><br><br>
             <select name="treatment_state" class="form-control mb-3">
-<<<<<<< HEAD:resources/views/admin/patient/addPatient.blade.php
-=======
                 {{-- <option value="" disabled selected>Treatment state</option> --}}
->>>>>>> 900e3ea (mohammed commit):resources/views/admin/patient/add.blade.php
                 <option value="0" selected>Not complete</option>
                 <option value="1"  {{old('treatment_state') == '1' ? 'selected' : ''}}>complete</option>
             </select>

@@ -89,7 +89,7 @@ class PatientController extends Controller
      */
     public function edit(Patient $patient)
     {
-        $patient = $patient->withMax('reservations', 'date')->firstOrFail();
+        // $patient = $patient->withMax('reservations', 'date')->firstOrFail();
         return view('admin.patient.EditPatient', compact('patient'));
     }
 
@@ -106,6 +106,7 @@ class PatientController extends Controller
             'name'              => 'required|min:3|max:30',
             'phone'             => 'required|numeric|digits:10',
             'treatment_state'   => 'nullable',
+            'identity_number'   => 'required|numeric|unique:patients,identity_number,'.$id,
         ]);
         Patient::find($id)->update([
             'name' => $request->name,

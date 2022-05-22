@@ -92,9 +92,8 @@ class ReservationController extends Controller
         $request->validate([
             'date' =>'date',
         ]);
-        $x=Patient::with('reservations')->where('id',$id)->first();
-        // dd(();
-        $id=$x->reservations[0]->id;
+        $patient=Patient::with('reservations')->where('id',$id)->first();
+        $id=$patient->reservations[0]->id;
         Reservation::find($id)->update([
             'date'=>$request->date,
         ]);

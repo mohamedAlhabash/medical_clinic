@@ -29,23 +29,6 @@ class PatientRequest extends FormRequest
             {
                 return[
                     'name'              => 'required|min:3|max:30',
-<<<<<<< HEAD
-                    'phone'             => 'required|numeric',
-                    'treatment_state'   => 'nullable',
-                    'identity_number'   => 'required|numeric|unique:patients',
-                ];
-            }
-            case 'PUT':
-            {
-                return[
-                    'name'              => 'required|min:3|max:30',
-                    'phone'             => 'required|numeric',
-                    'treatment_state'   => 'nullable',
-                    'identity_number'   => 'required|numeric|unique:patients,identity_number,'.$this->route()->patient->id,
-                ];
-            }
-            case 'PATCH':
-=======
                     'phone'             => 'required|numeric|digits:10',
                     'treatment_state'   => 'nullable',
                     'identity_number'   => 'required|numeric|unique:patients,identity_number',
@@ -62,7 +45,6 @@ class PatientRequest extends FormRequest
             //     ];
             // }
                 case 'PATCH':
->>>>>>> 900e3ea (mohammed commit)
             default: break;
         }
     }
